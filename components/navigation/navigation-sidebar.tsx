@@ -14,7 +14,7 @@ export const NavigationSideBar = async () => {
   const profile = await currentProfile();
 
   if (!profile) {
-    return redirect("/");
+    return redirect("/");    
   }
 
   const servers = await db.server.findMany({
@@ -27,6 +27,8 @@ export const NavigationSideBar = async () => {
     },
   });
 
+  console.log("navsidebar");
+  
   return (
     <div className="space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] py-3">
       <NavigationAction />
