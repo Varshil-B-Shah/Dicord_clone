@@ -57,7 +57,7 @@ export const InviteModal = () => {
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
       <DialogContent
-        aria-describedby="invite-modal"
+        aria-describedby="invite-friends"
         className="bg-white text-black p-0 overflow-hidden"
       >
         <DialogHeader className="pt-8 px-6">
