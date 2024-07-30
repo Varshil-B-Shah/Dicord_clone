@@ -40,7 +40,7 @@ const formSchema = z.object({
 export const InitialModal = () => {
   const [isMounted, setIsMounted] = useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -59,14 +59,13 @@ export const InitialModal = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log(values);
     try {
-      await axios.post("/api/servers" , values);
+      await axios.post("/api/servers", values);
 
       form.reset();
       router.refresh();
       window.location.reload();
     } catch (error) {
       console.log(error);
-      
     }
   };
 
@@ -76,7 +75,10 @@ export const InitialModal = () => {
 
   return (
     <Dialog open>
-      <DialogContent className="bg-white text-black p-0 overflow-hidden">
+      <DialogContent
+        aria-describedby="initial-modal"
+        className="bg-white text-black p-0 overflow-hidden"
+      >
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
             Customize your server
@@ -96,7 +98,7 @@ export const InitialModal = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <FileUpload 
+                        <FileUpload
                           endpoint="serverImage"
                           value={field.value}
                           onChange={field.onChange}

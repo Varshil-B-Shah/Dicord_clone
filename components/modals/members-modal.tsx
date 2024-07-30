@@ -103,7 +103,7 @@ export const MembersModal = () => {
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
       <DialogContent
-        aria-describedby="members"
+        aria-describedby="manage-members"
         className="bg-white text-black overflow-hidden"
       >
         <DialogHeader className="pt-8 px-6">

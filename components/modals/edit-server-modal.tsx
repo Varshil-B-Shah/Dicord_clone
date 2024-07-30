@@ -52,13 +52,13 @@ export const EditServerMoadal = () => {
       imageUrl: "",
     },
   });
-  
+
   useEffect(() => {
-    if(server){
+    if (server) {
       form.setValue("name", server.name);
-      form.setValue("imageUrl" , server.imageUrl);
+      form.setValue("imageUrl", server.imageUrl);
     }
-  },[server, form])
+  }, [server, form]);
 
   const isLoading = form.formState.isSubmitting;
 
@@ -82,7 +82,10 @@ export const EditServerMoadal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
-      <DialogContent aria-describedby="edit-server" className="bg-white text-black p-0 overflow-hidden">
+      <DialogContent
+        aria-describedby="edit-server"
+        className="bg-white text-black p-0 overflow-hidden"
+      >
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
             Edit your server
