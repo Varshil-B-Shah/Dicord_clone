@@ -103,7 +103,7 @@ export const CreateChannelModal = () => {
   return (
     <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogContent
-        aria-describedby="create-channel"
+        aria-describedby={undefined}
         className="bg-white text-black p-0 overflow-hidden"
       >
         <DialogHeader className="pt-8 px-6">
