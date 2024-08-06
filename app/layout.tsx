@@ -10,6 +10,7 @@ import {
 } from "@clerk/nextjs";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SocketProvider } from "@/components/providers/socket-provider";
 import { cn } from "@/lib/utils";
 
 const font = Open_Sans({ subsets: ["latin"] });
@@ -41,8 +42,10 @@ export default function RootLayout({
               enableSystem={false}
               storageKey="discord-theme"
             >
-            <ModalProvider />
-              {children}
+              <SocketProvider>
+                <ModalProvider />
+                {children}
+              </SocketProvider>
             </ThemeProvider>
           </main>
         </body>
